@@ -1,0 +1,506 @@
+[
+    {
+        "filterName": "KinesisFH_Iot_Cold_Storage_Parquet_Stream",
+        "filterPattern": "DataFormatConversion.MalformedData",
+        "logGroupName": "/aws/kinesisfirehose/iot-cold-storage-parquet-stream",
+        "metricTransformations": [
+            {
+                "metricName": "KinesisFH_Iot_Cold_Storage_Parquet_Stream",
+                "metricNamespace": "xxx/kinesisfirehose",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "GG_Fatal_Error",
+        "filterPattern": "fatal",
+        "logGroupName": "/aws/greengrass/GreengrassSystemComponent/us-east-1/System",
+        "metricTransformations": [
+            {
+                "metricName": "metricName_GG_Fatal_Error",
+                "metricNamespace": "xxx/greengrass",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "GG_Sandbox_Error",
+        "filterPattern": "SANDBOX-ERROR",
+        "logGroupName": "/aws/greengrass/UserComponent/us-east-1/com.xxx-xxx.iot.RulesEngineCore",
+        "metricTransformations": [
+            {
+                "metricName": "metricName_GG_Sandbox_Error",
+                "metricNamespace": "xxx/greengrass",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "Rules_Engine_Error",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/greengrass/UserComponent/us-east-1/com.xxx-xxx.iot.RulesEngineCore",
+        "metricTransformations": [
+            {
+                "metricName": "metricName_Rules_Engine_Error",
+                "metricNamespace": "xxx/greengrass",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "API_Gateway_Authorizer_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/API_Gateway_Authorizer",
+        "metricTransformations": [
+            {
+                "metricName": "API_Gateway_Authorizer_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "fnGetCloudWatch_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/fnGetCloudWatch",
+        "metricTransformations": [
+            {
+                "metricName": "fnGetCloudWatch_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "fnGetSNS_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/fnGetSNS",
+        "metricTransformations": [
+            {
+                "metricName": "fnGetSNS_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "fnPostCloudWatch_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/fnPostCloudWatch",
+        "metricTransformations": [
+            {
+                "metricName": "fnPostCloudWatch_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "fnPostCloudWatchLogs_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/fnPostCloudWatchLogs",
+        "metricTransformations": [
+            {
+                "metricName": "fnPostCloudWatchLogs_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "fnPostSNS_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/fnPostSNS",
+        "metricTransformations": [
+            {
+                "metricName": "fnPostSNS_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_API_Auth_Frontend_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_API_Auth_Frontend",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_API_Auth_Frontend_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_API_Gateway_Connectivity_Get_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_API_Gateway_Connectivity_Get",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_API_Gateway_Connectivity_Get_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_API_Gateway_Integrations_Get_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_API_Gateway_Integrations_Get",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_API_Gateway_Integrations_Get_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_API_Gateway_Integrations_Post_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_API_Gateway_Integrations_Post",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_API_Gateway_Integrations_Post_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_API_Integrations_Manager_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_API_Integrations_Manager",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_API_Integrations_Manager_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_API_IoT_Connection_Credentials_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_API_IoT_Connection_Credentials",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_API_IoT_Connection_Credentials_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_API_Simulator_Config_Get_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_API_Simulator_Config_Get",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_API_Simulator_Config_Get_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_API_Simulator_Config_Update_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_API_Simulator_Config_Update",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_API_Simulator_Config_Update_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_API_Thing_Command_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_API_Thing_Command",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_API_Thing_Command_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_API_Thing_Context_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_API_Thing_Context",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_API_Thing_Context_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_API_Thing_History_Search_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_API_Thing_History_Search",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_API_Thing_History_Search_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_API_Thing_Manage_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_API_Thing_Manage",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_API_Thing_Manage_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_API_Thing_Message_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_API_Thing_Message",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_API_Thing_Message_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_API_Thing_Registration_Complete_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_API_Thing_Registration_Complete",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_API_Thing_Registration_Complete_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_API_Thing_Registration_Start_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_API_Thing_Registration_Start",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_API_Thing_Registration_Start_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_API_Thing_Stats_Search_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_API_Thing_Stats_Search",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_API_Thing_Stats_Search_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_API_Thing_Type_Get_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_API_Thing_Type_Get",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_API_Thing_Type_Get_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_API_Thing_Type_Update_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_API_Thing_Type_Update",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_API_Thing_Type_Update_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_CF_Gateway_Deployment_Updater_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_CF_Gateway_Deployment_Updater",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_CF_Gateway_Deployment_Updater_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_Device_Heart_Beat_Monitor_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_Device_Heart_Beat_Monitor",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_Device_Heart_Beat_Monitor_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_Foward_Alert_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_Foward_Alert",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_Foward_Alert_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_Device_Heart_Beat_Monitor_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_Device_Heart_Beat_Monitor",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_Device_Heart_Beat_Monitor_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_Foward_Alert_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_Foward_Alert",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_Foward_Alert_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_Gateway_Deployment_Monitor_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_Gateway_Deployment_Monitor",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_Gateway_Deployment_Monitor_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_Gateway_Manage_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_Gateway_Manage",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_Gateway_Manage_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    },
+    {
+        "filterName": "IoT_Thing_Type_Schema_FN",
+        "filterPattern": "ERROR",
+        "logGroupName": "/aws/lambda/IoT_Thing_Type_Schema",
+        "metricTransformations": [
+            {
+                "metricName": "IoT_Thing_Type_Schema_MN",
+                "metricNamespace": "xxx/lambda",
+                "metricValue": "1",
+                "defaultValue": null,
+                "unit": "Count"
+            }
+        ]
+    }
+]

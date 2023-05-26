@@ -1,0 +1,79 @@
+service: observability-api
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: ${opt:stage}
+  profile: ${opt:aws-profile, 'xxxxx_AWSAdministratorAccess'}
+  apiGateway:
+    disableDefaultEndpoint: true
+ 
+
+plugins:
+  - serverless-better-credentials
+  - serverless-iam-roles-per-function
+  - serverless-plugin-log-retention
+  - serverless-domain-manager
+  - serverless-step-functions
+  # - serverless-plugin-scripts
+
+custom:
+  logRetentionInDays: 7
+  # scripts:
+  #   hooks:
+      # 'deploy:finalize': sls invoke -f functionName 
+  customDomain:
+    domainName: ${file(env.yml):${self:provider.stage}.domainName}.xxx-xxx.io
+    basePath: 'observability'
+    stage: ${self:provider.stage}
+
+functions:
+  # fnPublishMQTTCron:
+  #   name: fnPublishMQTTCron-${self:provider.stage}
+  #   handler: src/IoT-Clients/fnPublishMQTTCron.fnPublishMQTTCron
+  #   events:
+  #     - schedule: cron(0/1 * * * ? *)
+  #   memorySize: 256
+  #   timeout: 5
+  #   iamRoleStatementsName: fnPublishMQTTCron-${self:provider.stage}
+  #   iamRoleStatements:
+  #   - Effect: "Allow"
+  #     Action:
+  #     - "iot:*"
+  #     Resource: '*'
+
+  # fnMqttPublishCommandReaction:
+  #   name: fnMqttPublishCommandReaction-${self:provider.stage}
+  #   handler: src/IoT-Clients/fnMqttPublishCommandReaction.fnMqttPublishCommandReaction
+  #   events:
+  #     - cloudwatchLog:
+  #         logGroup: '/aws/lambda/fnPublishMQTTCron-dev'
+  #         filter: '{ $.temp >= 5 }'
+  #   memorySize: 256
+  #   timeout: 5
+  #   logRetentionInDays: 7
+  #   iamRoleStatementsName: fnMqttPublishCommandReaction-${self:provider.stage}
+  #   iamRoleStatements:
+  #   - Effect: "Allow"
+  #     Action:
+  #     - "iot:*"
+  #     Resource: '*'
+
+  fnGetCloudWatch: ${file(src/CloudWatch/serverless.yml):fnGetCloudWatch}
+  fnPostCloudWatch: ${file(src/CloudWatch/serverless.yml):fnPostCloudWatch}
+
+  fnPostCloudWatchLogs: ${file(src/CloudWatchLogs/serverless.yml):fnPostCloudWatchLogs}
+
+  fnPostSNS: ${file(src/SNS/serverless.yml):fnPostSNS}
+  fnGetSNS: ${file(src/SNS/serverless.yml):fnGetSNS}
+
+  fnSlackDispatchAlarm: ${file(src/tools/serverless.yml):fnSlackDispatchAlarm}
+
+  # CRON functions
+  # fnPublishMQTTCron: ${file(src/fnCRON/serverless.yml):fnPublishMQTTCron}
+  # fnAlarmCron: ${file(src/fnCRON/serverless.yml):fnAlarmCron}
+
+  fnDLQIoTFowardAlertS3Insert: ${file(src/S3/serverless.yml):fnDLQIoTFowardAlertS3Insert}
+  fnPostDLQIoTFowardAlertS3RetryMQTT: ${file(src/S3/serverless.yml):fnPostDLQIoTFowardAlertS3RetryMQTT}

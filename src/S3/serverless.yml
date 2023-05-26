@@ -1,0 +1,40 @@
+fnDLQIoTFowardAlertS3Insert:
+  name: fnDLQIoTFowardAlertS3Insert
+  handler: src/S3/fnDLQIoTFowardAlertS3Insert.fnDLQIoTFowardAlertS3Insert    
+  memorySize: 256
+  timeout: 60
+  logRetentionInDays: 7
+  iamRoleStatementsName: fnDLQIoTFowardAlertS3Insert-${self:provider.stage}
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+      - "s3:*"
+      Resource: '*'
+    - Effect: "Allow"
+      Action:
+      - "lambda:*"
+      Resource: '*'
+
+fnPostDLQIoTFowardAlertS3RetryMQTT:
+  name: fnPostDLQIoTFowardAlertS3RetryMQTT
+  handler: src/S3/fnPostDLQIoTFowardAlertS3RetryMQTT.fnPostDLQIoTFowardAlertS3RetryMQTT
+  events:
+    - http:
+        path: /dlq/iot_things_externalKey_message_aggregate_retry
+        method: POST
+        private: false
+        cors: true
+        authorizer: ''
+  memorySize: 256
+  timeout: 60
+  logRetentionInDays: 7
+  iamRoleStatementsName: fnPostDLQIoTFowardAlertS3RetryMQTT-${self:provider.stage}
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+      - "s3:*"
+      Resource: '*'
+    - Effect: "Allow"
+      Action:
+      - "iot:*"
+      Resource: '*'    

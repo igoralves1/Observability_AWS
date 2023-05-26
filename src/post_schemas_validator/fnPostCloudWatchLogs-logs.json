@@ -1,0 +1,44 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "The Root Schema",
+    "required": ["startTime","endTime","queryString","awaitAwsQueryTime"],
+    "properties": {
+      "startTime": {
+        "type": "integer",
+        "title": "startTime The Foo Schema",
+        "default": 1664582400
+      },
+      "endTime": {
+        "type": "integer",
+        "title": "endTime The Foo Schema",
+        "default": 1666569600
+      },
+      "queryString": {
+        "type": "string",
+        "title": "queryString The Foo Schema",
+        "default": "/aws/lambda/fnPublishMQTTCron-dev"
+      },
+      "awaitAwsQueryTime": {
+        "type": "integer",
+        "title": "awaitAwsQueryTime The Foo Schema in seconds",
+        "default": 6
+      },
+      "limit": {
+        "type": "integer",
+        "title": "limit The Foo Schema",
+        "default": null
+      },
+      "logGroupName": {
+        "type": "string",
+        "title": "logGroupName The Foo Schema",
+        "default": null
+      },
+      "logGroupNames": {
+        "type": "object",
+        "title": "logGroupNames The Foo Schema",
+        "default": null
+      }
+    }
+}

@@ -1,0 +1,16 @@
+# https://www.serverless.com/framework/docs/providers/aws/events/sns
+fnSlackDispatchAlarm:
+  name: fnSlackDispatchAlarm
+  handler: src/tools/fnSlackDispatchAlarm.fnSlackDispatchAlarm
+  events:
+    - sns: SlackDispatch   
+  memorySize: 256
+  timeout: 60
+  maximumRetryAttempts: 0
+  logRetentionInDays: 7
+  iamRoleStatementsName: fnSlackDispatchAlarm-${self:provider.stage}
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+      - "sns:*"
+      Resource: '*'  

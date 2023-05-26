@@ -1,0 +1,48 @@
+fnGetSNS:
+  name: fnGetSNS
+  handler: src/SNS/fnGetSNS.fnGetSNS
+  events:
+    - http:
+        path: /topics
+        method: GET
+        private: false
+        cors: true
+        authorizer: ''
+        request:
+          parameters:
+            querystrings:
+              NextToken: false   
+  memorySize: 256
+  timeout: 60
+  logRetentionInDays: 7
+  iamRoleStatementsName: fnGetSNS-${self:provider.stage}
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+      - "sns:*"
+      Resource: '*'  
+
+
+fnPostSNS:
+    name: fnPostSNS
+    handler: src/SNS/fnPostSNS.fnPostSNS
+    events:
+      - http:
+         path: /topic/create
+         method: POST
+         private: false
+         cors: true   
+      - http:
+         path: /topic/subscribe
+         method: POST
+         private: false
+         cors: true    
+    memorySize: 256
+    timeout: 60
+    logRetentionInDays: 7
+    iamRoleStatementsName: fnPostSNS-${self:provider.stage}
+    iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+      - "sns:*"
+      Resource: '*'

@@ -1,0 +1,8 @@
+[
+    {
+        "logGroupName" : "/aws/greengrass/UserComponent/us-east-1/com.xxx-xxx.iot.RulesEngineCore"
+    },
+    {
+        "logGroupName" : "/aws/greengrass/GreengrassSystemComponent/us-east-1/System"
+    }
+]

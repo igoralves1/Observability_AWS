@@ -1,0 +1,93 @@
+fnGetCloudWatch:
+  name: fnGetCloudWatch
+  handler: src/CloudWatch/fnGetCloudWatch.fnGetCloudWatch
+  events:
+    - http:
+        path: /rules
+        method: GET
+        private: false
+        cors: true
+        authorizer: ''
+        request:
+          parameters:
+            querystrings:
+              MaxResults: false
+              NextToken: false      
+  memorySize: 256
+  timeout: 60
+  logRetentionInDays: 7
+  iamRoleStatementsName: fnGetCloudWatch-${self:provider.stage}
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "logs:*"
+      Resource: '*'
+    - Effect: "Allow"
+      Action:
+        - "cloudwatch:*"
+      Resource: '*'  
+
+fnPostCloudWatch:
+  name: fnPostCloudWatch
+  handler: src/CloudWatch/fnPostCloudWatch.fnPostCloudWatch
+  events:
+    - http:
+        path: /alarm/create
+        method: POST
+        private: false
+        cors: true
+        authorizer: ''
+    - http:
+        path: /alarms/history/describe
+        method: POST
+        private: false
+        cors: true
+        authorizer: '' 
+    - http:
+        path: /alarms/describe
+        method: POST
+        private: false
+        cors: true
+        authorizer: ''
+    - http:
+        path: /alarms/deploy
+        method: POST
+        private: false
+        cors: true
+        authorizer: ''
+  memorySize: 256
+  timeout: 60
+  logRetentionInDays: 7
+  iamRoleStatementsName: fnPostCloudWatch-${self:provider.stage}
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "logs:*"
+      Resource: '*'
+    - Effect: "Allow"
+      Action:
+        - "cloudwatch:*"
+      Resource: '*'
+    - Effect: "Allow"
+      Action:
+      - "sns:*"
+      Resource: '*'
+
+
+  # fnAlarmCron: Not created yet
+  #   name: fnAlarmCron
+  #   handler: src/CloudWatch/fnAlarmCron.fnAlarmCron
+  #   events:
+  #     - schedule: cron(0/1 * * * ? *)
+  #   memorySize: 2000
+  #   timeout: 900
+  #   iamRoleStatementsName: fnAlarmCron-${self:provider.stage}
+  #   iamRoleStatements:
+  #   - Effect: "Allow"
+  #     Action:
+  #     - "iot:*"
+  #     Resource: '*' 
+  #   - Effect: "Allow"
+  #     Action:
+  #     - "logs:*"
+  #     Resource: '*'       

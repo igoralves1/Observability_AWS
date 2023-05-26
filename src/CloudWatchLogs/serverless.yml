@@ -1,0 +1,80 @@
+fnPostCloudWatchLogs:
+  name: fnPostCloudWatchLogs
+  handler: src/CloudWatchLogs/fnPostCloudWatchLogs.fnPostCloudWatchLogs
+  events:      
+    - http:
+        path: /logs/describe
+        method: POST
+        private: false
+        cors: true
+        authorizer: ''
+        # request:
+        #     schemas:
+        #       application/json: ${file(src/post_schemas_validator/fnPostCloudWatchLogs-logs.json)}
+    - http:
+        path: /log-groups/describe
+        method: POST
+        private: false
+        cors: true
+        authorizer: ''
+        # request:
+        #     schemas:
+        #       application/json: ${file(src/post_schemas_validator/fnPostCloudWatchLogs-logs.json)}
+    - http:
+        path: /log-group/create
+        method: POST
+        private: false
+        cors: true
+        authorizer: ''
+        # request:
+        #     schemas:
+        #       application/json: ${file(src/post_schemas_validator/fnPostCloudWatchLogs-logs.json)}
+    - http:
+        path: /log-groups/deploy
+        method: POST
+        private: false
+        cors: true
+        authorizer: ''
+        # request:
+        #     schemas:
+        #       application/json: ${file(src/post_schemas_validator/fnPostCloudWatchLogs-logs.json)}
+    - http:
+        path: /metric-filter/create
+        method: POST
+        private: false
+        cors: true
+        authorizer: ''
+        # request:
+        #     schemas:
+        #       application/json: ${file(src/post_schemas_validator/fnPostCloudWatchLogs-logs.json)}
+    - http:
+        path: /metric-filter/describe
+        method: POST
+        private: false
+        cors: true
+        authorizer: ''
+        # request:
+        #     schemas:
+        #       application/json: ${file(src/post_schemas_validator/fnPostCloudWatchLogs-logs.json)}
+    - http:
+        path: /metric-filter/deploy
+        method: POST
+        private: false
+        cors: true
+        authorizer: ''
+        # request:
+        #     schemas:
+        #       application/json: ${file(src/post_schemas_validator/fnPostCloudWatchLogs-logs.json)}
+  memorySize: 256
+  timeout: 60
+  logRetentionInDays: 7
+  iamRoleStatementsName: fnPostCloudWatchLogs-${self:provider.stage}
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+      - "logs:*"
+      Resource: '*'
+    - Effect: "Allow"
+      Action:
+      - "cloudwatch:*"
+      Resource: '*' 
